@@ -1,9 +1,9 @@
--name: start the mysql-server
- hosts: mysql
- become: yes
-tasks:
-- name: start the mysql-server  
-  ansible.builtin.service:
-    name: mysql
-    state: started
-    enabled: yes
+- name: start the mysql-server
+  hosts: mysql
+  become: yes
+  tasks:
+  - name: start the mysql-server  
+    ansible.builtin.service:
+      name: mysql
+      state: started
+      enabled: yes
