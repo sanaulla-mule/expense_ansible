@@ -27,5 +27,5 @@
     ignore_errors: true
 
   - name: print the output
-    ansibsle.builtin.debug:
+    ansible.builtin.debug:
       msg: "MySQL info: {{ mysql_info }}"
