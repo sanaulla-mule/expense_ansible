@@ -7,7 +7,7 @@
       name: mysql-server
       state: installed 
 
-  - name: install mysql
+  - name: start and enabled  mysql
     ansible.builtin.service:
       name: mysql-server
       state: started
