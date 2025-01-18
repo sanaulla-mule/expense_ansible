@@ -23,4 +23,9 @@
       login_user: root
       login_password: ExpenseApp@1
       login_host: mysql.sanadevops.online 
-    register: mysql_info  
+    register: mysql_info 
+    ignore_error: true
+
+  - name: print the output
+    ansibsle.builtin.debug:
+      msg: "MySQL info: {{ mysql_info }}"
