@@ -19,7 +19,7 @@
 
   - name: create app directory
     ansible.builtin.file: 
-      name: /app
+      path: /app
       state: directory
 
    - name: dowmload backend file
@@ -29,7 +29,7 @@
 
   - name: unzip backend code
     ansible.builtin.unarchive: 
-      name: /tmp/backend.zip
+      src: /tmp/backend.zip
       dest: /app               
      
 
