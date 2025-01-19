@@ -12,5 +12,24 @@
     ansible.builtin.package: 
       name: nodejs
       state: present
+ 
+  - name: create user
+    ansible.builtin.user: 
+      name: expense
 
+  - name: create app directory
+    ansible.builtin.file: 
+      name: /app
+      state: directory
+
+   - name: dowmload backend file
+     ansible.builtin.get_url: 
+      url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+      dest: /tmp/backend.zip
+
+  - name: unzip backend zip
+    ansible.builtin.unarchive: 
+      name: /tmp/backend.zip
+      state: /app               
+     
 
