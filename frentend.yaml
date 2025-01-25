@@ -1,5 +1,5 @@
 - name: configure frent server
-  hosts: frentend
+  hosts: frontend
   become: yes
   tasks:
   - name: install nginx server
@@ -34,12 +34,13 @@
       dest: /usr/share/nginx/html
       remote_src: yes   
 
-  - name : copy expense.conf
+  - name : copy expense config
     ansible.builtin.copy:
       src: expense.conf
       dest: /etc/nginx/default.d/expense.conf
  
-  - name: restart ngnix
+  - name: restart nginx
     ansible.builtin.service:
+      name: nginx
       state: restarted
-      name: ngnix
+      
