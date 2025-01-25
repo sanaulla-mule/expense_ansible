@@ -2,7 +2,7 @@
   hosts: frentend
   become: yes
   tasks:
-   - name: install nginx server
+  - name: install nginx server
      ansible.builtin.dnf:
       name: nginx
       state: installed
