@@ -39,8 +39,8 @@
       src: backend.service
       dest: /etc/nginx/default.d/expense.conf
  
-  - name:  restart nginx
+  - name: restart nginx
     ansible.builtin.service:
-     state: restarted
-     name: ngnix
+      state: restarted
+      name: ngnix
         
