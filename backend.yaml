@@ -61,6 +61,13 @@
       login_password: ExpenseApp@1
       login_host: mysql.sanadevops.online
       target: /app/schema/backend.sql  
+
+  - name: daemon reload and restart service
+    ansible.builtin.systemd_service:
+      enabled: yes
+      state: restarted 
+      deamon_reload: true
+      name: backend     
                     
      
 
